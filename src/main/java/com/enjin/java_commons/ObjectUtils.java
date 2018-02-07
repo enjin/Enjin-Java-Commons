@@ -37,20 +37,4 @@ public class ObjectUtils {
         return object == null;
     }
 
-    /**
-     * <p>Checks if an object is not {@code null}.</p>
-     *
-     * <pre>
-     *     ArrayUtils.isNull(null) = false
-     *     ArrayUtils.isNull([])   = true
-     * </pre>
-     *
-     * @param object  the object to test
-     * @return {@code true} if the object is not {@code null}.
-     * @since 1.0.0
-     */
-    public static boolean isNotNull(final Object object) {
-        return !isNull(object);
-    }
-
 }

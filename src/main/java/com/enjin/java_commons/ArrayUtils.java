@@ -43,23 +43,6 @@ public class ArrayUtils {
     }
 
     /**
-     * <p>Checks if an array of Objects is not empty.</p>
-     *
-     * <pre>
-     *     ArrayUtils.isNotEmpty(null)  = false
-     *     ArrayUtils.isNotEmpty([])    = false
-     *     ArrayUtils.isNotEmpty(["a"]) = true
-     * </pre>
-     *
-     * @param array  the array to test
-     * @return {@code true} if the array is not empty.
-     * @since 1.0.0
-     */
-    public static boolean isNotEmpty(final Object[] array) {
-        return !isEmpty(array);
-    }
-
-    /**
      * <p>Returns the length of the provided array.
      * This method can deal with {@code Object} arrays and with primitive arrays.</p>
      *
