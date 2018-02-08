@@ -8,14 +8,16 @@ package com.enjin.java_commons;
  * Each method documents its behaviour in detail.</p>
  *
  * <p>#ThreadSafe#</p>
+ *
+ * @since 1.0
  */
 public class ObjectUtils {
 
     /**
-     * <p>ObjectUtils instances should NOT be constructed in standard programming.
+     * <p>{@code ObjectUtils} instances should NOT be constructed in standard programming.</p>
      *
-     * </p>This constructor is public to permit tools that require a JavaBean instance
-     * to operate.
+     * <p>This constructor is public to permit tools that require a JavaBean instance
+     * to operate.</p>
      */
     public ObjectUtils() {
         super();
@@ -29,9 +31,11 @@ public class ObjectUtils {
      *     ArrayUtils.isNull([])   = false
      * </pre>
      *
-     * @param object  the object to test
-     * @return {@code true} if the object is {@code null}.
-     * @since 1.0.0
+     * @param object the object to test
+     *
+     * @return {@code true} if the object is {@code null}
+     *
+     * @since 1.0
      */
     public static boolean isNull(final Object object) {
         return object == null;

@@ -12,11 +12,13 @@ import java.lang.reflect.Array;
  * element may throw an exception. Each method documents its behaviour in detail.</p>
  *
  * <p>#ThreadSafe#</p>
+ *
+ * @since 1.0
  */
 public class ArrayUtils {
 
     /**
-     * <p>ArrayUtils instances should NOT be constructed in standard programming.</p>
+     * <p>{@code ArrayUtils} instances should NOT be constructed in standard programming.</p>
      *
      * <p>This constructor is public to permit tools that require a JavaBean instance
      * to operate.</p>
@@ -34,9 +36,11 @@ public class ArrayUtils {
      *     ArrayUtils.isEmpty(["a"]) = false
      * </pre>
      *
-     * @param array  the array to test
-     * @return {@code true} if the array is empty or {@code null}.
-     * @since 1.0.0
+     * @param array the array to test
+     *
+     * @return {@code true} if the array is empty or {@code null}
+     *
+     * @since 1.0
      */
     public static boolean isEmpty(final Object[] array) {
         return getLength(array) == 0;
@@ -57,10 +61,12 @@ public class ArrayUtils {
      *     ArrayUtils.getLength(["a", "b", "c"]) = 3
      * </pre>
      *
-     * @param array  the array to fetch the length from, may be null
+     * @param array the array to fetch the length from, may be null
+     *
      * @return The length of the array, or {@code 0} if the array is {@code null}
-     * @throws IllegalArgumentException if the object argument is not an array.
-     * @since 1.0.0
+     *
+     * @throws IllegalArgumentException if the object argument is not an array
+     * @since 1.0
      */
     public static int getLength(final Object array) {
         return ObjectUtils.isNull(array) ? 0 : Array.getLength(array);
