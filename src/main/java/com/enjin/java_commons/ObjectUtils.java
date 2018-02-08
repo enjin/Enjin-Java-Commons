@@ -1,7 +1,7 @@
 package com.enjin.java_commons;
 
 /**
- * <p>Operations on {@code Object}.</p>
+ * <p>Operations on {@link Object}.</p>
  *
  * <p>This class tries to handle {@code null} input gracefully.
  * An exception will generally not be thrown for a {@code null} input.
@@ -24,7 +24,7 @@ public class ObjectUtils {
     }
 
     /**
-     * <p>Checks if an object {@code null}.</p>
+     * <p>Checks if an object is {@code null}.</p>
      *
      * <pre>
      *     ArrayUtils.isNull(null) = true
