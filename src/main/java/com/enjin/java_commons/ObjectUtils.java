@@ -41,4 +41,18 @@ public class ObjectUtils {
         return object == null;
     }
 
+    /**
+     * <p>Returns the {@link String} representation of the provided object or {@code null}
+     * if the object is null</p>
+     *
+     * @param object the object to construct string representation of
+     *
+     * @return {@link String} representation of the object or {@code null} if the object is null.
+     *
+     * @since 1.0
+     */
+    public static String toString(final Object object) {
+        return isNull(object) ? null : object.toString();
+    }
+
 }
