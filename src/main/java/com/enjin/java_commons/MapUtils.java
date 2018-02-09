@@ -14,7 +14,7 @@ import java.util.Map;
 public class MapUtils {
 
     /**
-     * <p>{@code CollectionUtils} instances should NOT be constructed in standard programming.</p>
+     * <p>{@code MapUtils} instances should NOT be constructed in standard programming.</p>
      *
      * <p>This constructor is public to permit tools that require a JavaBean instance
      * to operate.</p>
