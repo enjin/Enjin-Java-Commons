@@ -62,7 +62,7 @@ public class OptionalUtils {
      *
      * @since 1.0
      */
-    public static boolean isMapPresent(final Optional<? extends Map> optional) {
+    public static boolean isMapPresent(@SuppressWarnings("rawtypes") final Optional<? extends Map> optional) {
         return isPresent(optional) && !optional.get().isEmpty();
     }
 
@@ -75,7 +75,7 @@ public class OptionalUtils {
      *
      * @since 1.0
      */
-    public static boolean isCollectionPresent(final Optional<? extends Collection> optional) {
+    public static boolean isCollectionPresent(@SuppressWarnings("rawtypes") final Optional<? extends Collection> optional) {
         return isPresent(optional) && !optional.get().isEmpty();
     }
 
