@@ -28,20 +28,20 @@ public class ExceptionUtils {
     }
 
     /**
-     * <p>Converts an exception to a {@link String}.</p>
+     * <p>Converts a throwable to a {@link String}.</p>
      *
-     * @param exception the exception
+     * @param throwable the throwable
      *
-     * @return {@link String} representation of the exception
+     * @return {@link String} representation of the throwable
      *
      * @since 1.0
      */
-    public static String exceptionToString(final Exception exception) {
+    public static String throwableToString(final Throwable throwable) {
         String stacktrace = null;
-        if (exception != null) {
+        if (throwable != null) {
             try (StringWriter sw = new StringWriter()) {
                 try (PrintWriter pw = new PrintWriter(sw)) {
-                    exception.printStackTrace(pw);
+                    throwable.printStackTrace(pw);
                     stacktrace = sw.toString();
                 }
             } catch (IOException e) {
