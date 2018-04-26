@@ -23,7 +23,7 @@ public class RandomUtils {
     private static final Random RANDOM = new Random(System.currentTimeMillis());
 
     /**
-     * <p>{@code RandomUtils} instances should NOT be constructed in standard programming.
+     * <p>{@code RandomUtils} instances should NOT be constructed in standard programming.</p>
      *
      * <p>This constructor is public to permit tools that require a JavaBean instance
      * to operate.</p>

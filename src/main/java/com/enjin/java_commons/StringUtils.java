@@ -14,7 +14,7 @@ package com.enjin.java_commons;
 public class StringUtils {
 
     /**
-     * <p>{@code StringUtils} instances should NOT be constructed in standard programming.
+     * <p>{@code StringUtils} instances should NOT be constructed in standard programming.</p>
      *
      * <p>This constructor is public to permit tools that require a JavaBean instance
      * to operate.</p>

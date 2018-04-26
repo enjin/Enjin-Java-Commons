@@ -18,7 +18,7 @@ import java.io.StringWriter;
 public class ExceptionUtils {
 
     /**
-     * <p>{@code ExceptionUtils} instances should NOT be constructed in standard programming.
+     * <p>{@code ExceptionUtils} instances should NOT be constructed in standard programming.</p>
      *
      * <p>This constructor is public to permit tools that require a JavaBean instance
      * to operate.</p>
