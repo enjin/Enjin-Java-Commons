@@ -14,7 +14,7 @@ import java.util.Set;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
-public class ResourceUtil {
+public class ResourceUtils {
 
     private static void collectURL(ResourceURLFilter f, Set<URL> s, URL u) {
         if (f == null || f.accept(u)) {
