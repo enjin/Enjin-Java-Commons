@@ -58,4 +58,11 @@ public class ResourceUtil {
         return collectedURLs;
     }
 
+    public static Set<URL> getResourceURLs(ClassLoader classLoader, String rootPath, ResourceURLFilter filter) throws IOException, URISyntaxException {
+        Set<URL> collectedURLs = new HashSet<>();
+        URL url = classLoader.getResource(rootPath);
+        iterateEntry(new File(url.toURI()), filter, collectedURLs);
+        return collectedURLs;
+    }
+
 }
