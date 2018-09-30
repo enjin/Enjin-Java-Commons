@@ -1,5 +1,7 @@
 package com.enjin.java_commons.version.util;
 
+import com.enjin.java_commons.version.ElementType;
+
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -239,25 +241,6 @@ public class Stream<E> implements Iterable<E> {
                 throw new UnsupportedOperationException();
             }
         };
-    }
-
-    /**
-     * The {@code ElementType} interface represents types of the elements
-     * held by this stream and can be used for stream filtering.
-     *
-     * @param <E> type of elements held by this stream
-     */
-    public static interface ElementType<E> {
-
-        /**
-         * Checks if the specified element matches this type.
-         *
-         * @param element the element to be tested
-         *
-         * @return {@code true} if the element matches this type
-         * or {@code false} otherwise
-         */
-        boolean isMatchedBy(E element);
     }
 
 }

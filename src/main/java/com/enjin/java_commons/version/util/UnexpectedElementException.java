@@ -1,13 +1,13 @@
 package com.enjin.java_commons.version.util;
 
-import com.enjin.java_commons.version.util.Stream.ElementType;
+import com.enjin.java_commons.version.ElementType;
 
 import java.util.Arrays;
 
 /**
  * Thrown when attempting to consume a stream element of unexpected types.
  *
- * @see Stream#consume(Stream.ElementType...)
+ * @see Stream#consume(ElementType...)
  */
 public class UnexpectedElementException extends RuntimeException {
 

@@ -7,7 +7,6 @@ import static com.enjin.java_commons.version.VersionParser.CharType.HYPHEN;
 import static com.enjin.java_commons.version.VersionParser.CharType.LETTER;
 import static com.enjin.java_commons.version.VersionParser.CharType.PLUS;
 import com.enjin.java_commons.version.util.Stream;
-import com.enjin.java_commons.version.util.Stream.ElementType;
 import com.enjin.java_commons.version.util.UnexpectedElementException;
 
 import java.util.ArrayList;
@@ -428,7 +427,7 @@ public class VersionParser implements Parser<Version> {
     /**
      * Valid character types.
      */
-    public static enum CharType implements ElementType<Character> {
+    public enum CharType implements ElementType<Character> {
 
         DIGIT {
             /**
