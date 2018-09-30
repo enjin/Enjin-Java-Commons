@@ -105,9 +105,9 @@ public class VersionParser implements Parser<Version> {
      * @return a valid normal version object
      */
     private NormalVersion parseVersionCore() {
-        int major = Integer.parseInt(numericIdentifier());
-        int minor = 0;
-        int patch = 0;
+        Integer major = Integer.parseInt(numericIdentifier());
+        Integer minor = null;
+        Integer patch = null;
 
         if (characters.positiveLookAhead(DOT)) {
             consumeNextCharacter(DOT);

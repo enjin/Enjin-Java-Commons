@@ -2,6 +2,7 @@ package com.enjin.java_commons.version;
 
 import java.util.Comparator;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * The {@code Version} class is the main class of the Java SemVer library.
@@ -201,7 +202,7 @@ public class Version implements Comparable<Version> {
      *
      * @return the major version number
      */
-    public int getMajorVersion() {
+    public Integer getMajorVersion() {
         return normal.getMajor();
     }
 
@@ -210,7 +211,7 @@ public class Version implements Comparable<Version> {
      *
      * @return the minor version number
      */
-    public int getMinorVersion() {
+    public Optional<Integer> getMinorVersion() {
         return normal.getMinor();
     }
 
@@ -219,7 +220,7 @@ public class Version implements Comparable<Version> {
      *
      * @return the patch version number
      */
-    public int getPatchVersion() {
+    public Optional<Integer> getPatchVersion() {
         return normal.getPatch();
     }
 
