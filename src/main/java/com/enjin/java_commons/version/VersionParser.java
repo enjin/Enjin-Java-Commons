@@ -106,10 +106,17 @@ public class VersionParser implements Parser<Version> {
      */
     private NormalVersion parseVersionCore() {
         int major = Integer.parseInt(numericIdentifier());
-        consumeNextCharacter(DOT);
-        int minor = Integer.parseInt(numericIdentifier());
-        consumeNextCharacter(DOT);
-        int patch = Integer.parseInt(numericIdentifier());
+        int minor = 0;
+        int patch = 0;
+
+        if (characters.positiveLookAhead(DOT)) {
+            consumeNextCharacter(DOT);
+            minor = Integer.parseInt(numericIdentifier());
+            if (characters.positiveLookAhead(DOT)) {
+                consumeNextCharacter(DOT);
+                patch = Integer.parseInt(numericIdentifier());
+            }
+        }
         return new NormalVersion(major, minor, patch);
     }
 

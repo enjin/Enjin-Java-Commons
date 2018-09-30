@@ -144,7 +144,9 @@ public class NormalVersion implements Comparable<NormalVersion> {
     @Override
     public String toString() {
         return String.valueOf(major)
+                     .concat(".")
                      .concat(String.valueOf(minor))
+                     .concat(".")
                      .concat(String.valueOf(patch));
     }
 }

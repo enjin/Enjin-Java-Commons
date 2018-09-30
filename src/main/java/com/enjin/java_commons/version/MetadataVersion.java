@@ -24,10 +24,6 @@ public class MetadataVersion implements Comparable<MetadataVersion> {
      * @param identifiers the version's identifiers
      */
     public MetadataVersion(String[] identifiers) {
-        if (identifiers == null) {
-            throw new IllegalArgumentException("Identifiers MUST be non-null.");
-        }
-
         this.identifiers = identifiers;
     }
 
