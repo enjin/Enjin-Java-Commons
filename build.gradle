@@ -7,7 +7,8 @@ buildscript {
 }
 
 plugins {
-    id 'com.github.johnrengelman.shadow' version '2.0.0'
+    id 'com.bmuschko.nexus' version '2.3.1'
+    id 'io.codearte.nexus-staging' version '0.20.0'
 }
 
 group 'com.enjin'
@@ -17,7 +18,6 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'java'
 apply plugin: 'maven'
-apply plugin: 'com.github.johnrengelman.shadow'
 
 apply from: 'gradle/util.gradle'
 
@@ -27,19 +27,6 @@ For example, projects that build with Java 7 should have environment variable JA
 */
 apply from: scriptFile('env.gradle')
 configureJavaCompilers(8)
-
-idea {
-    module {
-        scopes.PROVIDED.plus += [configurations.shadow]
-    }
-}
-
-tasks.build.dependsOn(shadowJar)
-artifacts.archives shadowJar
-
-tasks.withType(AbstractCompile) {
-    classpath += configurations.shadow
-}
 
 repositories {
     mavenLocal()
@@ -51,10 +38,19 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
-jar {
-    archiveName = "${project.name}-slim.jar"
+extraArchive {
+    sources = false
+    javadoc = false
+    tests = false
 }
 
-shadowJar {
-    archiveName = "${project.name}.jar"
+nexus {
+    sign = false
+    repositoryUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+    snapshotRepositoryUrl = 'https://oss.sonatype.org/content/repositories/snapshots/'
+}
+
+wrapper {
+    gradleVersion = '5.4.1'
+    distributionType = Wrapper.DistributionType.ALL
 }
