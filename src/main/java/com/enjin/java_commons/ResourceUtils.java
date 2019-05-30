@@ -5,14 +5,15 @@ import com.enjin.java_commons.io.ResourceURLFilter;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.*;
 import java.security.CodeSource;
-import java.util.Enumeration;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import java.util.stream.Stream;
 
 public class ResourceUtils {
 
@@ -56,6 +57,26 @@ public class ResourceUtils {
         CodeSource src = rootClass.getProtectionDomain().getCodeSource();
         iterateEntry(new File(src.getLocation().toURI()), filter, collectedURLs);
         return collectedURLs;
+    }
+
+    public static Set<Path> walkClassLoaderResources(ClassLoader classLoader, String dir, int depth) throws URISyntaxException, IOException {
+        URI uri = classLoader.getResource(dir).toURI();
+
+        Path path;
+        if (uri.getScheme().equals("jar")) {
+            FileSystems.newFileSystem(uri, Collections.emptyMap());
+            path = Paths.get(uri);
+        } else {
+            path = Paths.get(uri);
+        }
+
+        Set<Path> resources = new HashSet<>();
+        Stream<Path> walk = Files.walk(path, depth);
+        for (Iterator<Path> it = walk.iterator(); it.hasNext();) {
+            resources.add(it.next());
+        }
+
+        return resources;
     }
 
 }
